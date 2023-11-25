@@ -5,7 +5,7 @@
  */
 package src;
 
-import Windows.StartWindow;
+import Windows.ArchivoCSV;
 
 /**
  *
@@ -17,9 +17,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        StartWindow fw = new StartWindow();
-        fw.setVisible(true);
-        fw.setLocationRelativeTo(null);
+        ArchivoCSV csv = new ArchivoCSV();
+        csv.setVisible(true);
     }
     
 }
