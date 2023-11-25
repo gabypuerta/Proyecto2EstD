@@ -4,17 +4,28 @@
  */
 package windows;
 
-/**
- *
- * @author gaby3
- */
-public class CrearUnDocumento extends javax.swing.JFrame {
+import javax.swing.JOptionPane;
+import functions.BinaryHeap;
+import functions.HashTable;
+import functions.User;
 
-    /**
-     * Creates new form CrearUnDocumento
-     */
-    public CrearUnDocumento() {
+
+public class CrearUnDocumento extends javax.swing.JFrame {
+    
+    public static HashTable td;
+    public static int sec;
+    public static BinaryHeap bh;
+    public static Cronometro crono; 
+    public static User usuario;
+
+    public CrearUnDocumento(HashTable t, int segundos, BinaryHeap bh, User usuario) {
         initComponents();
+        this.setVisible(true);
+        this.usuario = usuario;
+        this.td = t;
+        this.sec = segundos;
+        this.bh = bh;
+
     }
 
     /**
@@ -26,21 +37,192 @@ public class CrearUnDocumento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
+        type = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        size = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        title = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Introduzca el tipo del documento:");
+
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Crear Documento");
+
+        jButton1.setBackground(new java.awt.Color(51, 153, 255));
+        jButton1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Cerrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setBackground(new java.awt.Color(51, 153, 255));
+        jButton2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Crear");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Introduzca el tamaño del documento:");
+
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Introduzca el título:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(jLabel3)
+                            .addGap(101, 101, 101)
+                            .addComponent(jButton1))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(jLabel6))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addComponent(size, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addComponent(type, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(40, 40, 40)
+                            .addComponent(jButton2)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(219, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(209, 209, 209))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(jLabel3))
+                        .addComponent(jButton1))
+                    .addGap(52, 52, 52)
+                    .addComponent(jLabel6)
+                    .addGap(8, 8, 8)
+                    .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(80, 80, 80)
+                    .addComponent(size, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(30, 30, 30)
+                    .addComponent(jLabel2)
+                    .addGap(8, 8, 8)
+                    .addComponent(type, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(30, 30, 30)
+                    .addComponent(jButton2)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Menu m = new Menu(bh, td, crono, usuario);
+        m.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        System.out.println(this.sec);
+
+        boolean error = false;
+        try{
+            int stam = Integer.parseInt(this.size.getText());
+        }catch(Exception e){
+            error = true;
+            JOptionPane.showMessageDialog(rootPane, "El tamaño debe ser un numero entero");
+        }
+        if(!error){
+            String title = this.title.getText().toLowerCase();
+            int time = sec;
+            if(this.usuario.getPriority() == "prioridad_alta"){
+                time-= sec/4;
+            }
+            else if (this.usuario.getPriority() == "prioridad_media"){
+                time -= sec/2;
+            }
+            this.usuario.add_document(this.title.getText().toLowerCase(), Integer.parseInt(this.size.getText()), this.type.getText(), time);
+            JOptionPane.showMessageDialog(rootPane, "Documento Registrado Exitosamente con etiqueta de tiempo = " + time, "Crear Documento", HEIGHT);
+            this.dispose();
+            Menu m = new Menu(bh, td, crono, usuario);
+            m.setVisible(true);
+        }
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        this.dispose();
+        Menu m = new Menu(bh, td, crono, usuario);
+            m.setVisible(true);
+    }                                        
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+       System.out.println(this.sec);
+
+       boolean error = false;
+        try{
+           int stam = Integer.parseInt(this.size.getText());
+       }catch(Exception e){
+           error = true;
+           JOptionPane.showMessageDialog(rootPane, "El tamaño debe ser un numero entero");
+       }
+       if(!error){
+            String title = this.title.getText().toLowerCase();
+            int time = sec;
+            if(this.usuario.getPriority() == "prioridad_alta"){
+                time-= sec/4;
+                }
+            else if (this.usuario.getPriority() == "prioridad_media"){
+                time -= sec/2;
+                }
+            this.usuario.add_document(this.title.getText().toLowerCase(), Integer.parseInt(this.size.getText()), this.type.getText(), time);
+            JOptionPane.showMessageDialog(rootPane, "Documento Registrado Exitosamente con etiqueta de tiempo = " + time, "Crear Documento", HEIGHT);
+            this.dispose();
+            Menu m = new Menu(bh, td, crono, usuario);
+            m.setVisible(true);
+            }
+       
+    }                                        
 
     /**
      * @param args the command line arguments
@@ -68,15 +250,51 @@ public class CrearUnDocumento extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(CrearUnDocumento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CrearUnDocumento().setVisible(true);
+                new CrearUnDocumento(td, sec, bh, usuario).setVisible(true);
             }
         });
     }
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField size;
+    private javax.swing.JTextField title;
+    private javax.swing.JTextField type;
+    // End of variables declaration                   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField size;
+    private javax.swing.JTextField title;
+    private javax.swing.JTextField type;
     // End of variables declaration//GEN-END:variables
 }
